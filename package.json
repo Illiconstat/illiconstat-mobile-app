@@ -1,0 +1,26 @@
+{
+  "name": "illiconstat-mobile-app",
+  "version": "0.0.1",
+  "description": "Notre application de constat rapide",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Illiconstat/illiconstat-mobile-app.git"
+  },
+  "keywords": [
+    "constat",
+    "assurance",
+    "accident"
+  ],
+  "author": "segtio, ekougs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Illiconstat/illiconstat/issues"
+  },
+  "homepage": "https://github.com/Illiconstat/illiconstat#readme",
+  "dependencies": {
+    "nools": "^0.4.1"
+  }
+}
