@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Notre application de constat rapide",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start config/karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,21 @@
   "author": "segtio, ekougs",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Illiconstat/illiconstat/issues"
+    "url": "https://github.com/Illiconstat/illiconstat-mobile-app/issues"
   },
-  "homepage": "https://github.com/Illiconstat/illiconstat#readme",
+  "homepage": "https://github.com/Illiconstat/illiconstat-mobile-app#readme",
   "dependencies": {
-    "nools": "^0.4.1"
+    "angular": "1.5.5",
+    "nools": "0.4.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.5",
+    "browserify": "13.0.1",
+    "jasmine": "2.4.1",
+    "jasmine-core": "2.4.1",
+    "karma": "0.13.22",
+    "karma-jasmine": "1.0.2",
+    "karma-phantomjs-launcher": "1.0.0",
+    "phantomjs-prebuilt": "2.1.7"
   }
 }
