@@ -1,7 +1,8 @@
 'use strict';
 
 (function() {
-    var illiconstat = angular.module('illiconstat');
+    angular.module('nools', []);
+    var nools = angular.module('nools');
 
     var NoolsFactory = function NoolsFactory() {
         return require('nools');
@@ -9,5 +10,5 @@
     
     NoolsFactory.$inject = [];
 
-    illiconstat.factory('nools', NoolsFactory);
+    nools.factory('nools', NoolsFactory);
 })();

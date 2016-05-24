@@ -11,6 +11,7 @@ npm-debug.log
 www/styles
 www/assets/js/[app,vendor]*.js
 www/assets/css/*.css
+www/vendor/browserify-bundle.js
 
 # Intellij Idea
 .idea

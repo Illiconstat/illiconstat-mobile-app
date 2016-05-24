@@ -13,16 +13,16 @@ module.exports = function (config) {
             'node_modules/angular-mocks/angular-mocks.js',
             'node_modules/nools/nools.js',
             // 'config/karma-test-shim.js',
-            'app/**/*.js',
+            'www/app/**/*.js',
+            'www/vendor/browserify-bundle.js',
             'test/**/*.js'
-
         ],
 
         // proxied base paths
         proxies: {
             // required for component assests fetched by Angular's compiler
             "/config/": "/base/config/",
-            "/app/": "/base/app/",
+            "/www/": "/base/www/",
             "/test/": "/base/test/",
             "/node_modules/": "/base/node_modules/"
         },

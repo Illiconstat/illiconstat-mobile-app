@@ -25,8 +25,9 @@
     "build:css": "npm-run-all compile:sass concat:css uglify:css",
     "concat:js": "npm run concat www/app/**/*.js www/assets/js/app.js",
     "uglify:js": "uglifyjs --compress --mangle --output ./www/assets/js/app.min.js -- www/assets/js/app.js",
-    "build:app": "npm-run-all concat:js uglify:js",
-    "build": "npm-run-all -p build:app build:css"
+    "build:browserify": "browserify -r nools > www/vendor/browserify-bundle.js",
+    "build:app": "npm-run-all build:browserify concat:js uglify:js",
+    "build": "npm-run-all -p build:app build:css",
     "test": "karma start config/karma.conf.js"
   },
   "dependencies": {
@@ -37,7 +38,7 @@
     "nools": "^0.4.1"
   },
   "devDependencies": {
-    "angular-mocks": "1.5.5",
+    "angular-mocks": "1.5.3",
     "browserify": "13.0.1",
     "fs": "0.0.2",
     "glob": "7.0.3",

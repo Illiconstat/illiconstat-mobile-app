@@ -7,8 +7,7 @@ var Reply = function Reply(question, answer) {
 };
 
 (function () {
-    angular.module('illiconstat', []);
-
+    angular.module('illiconstat', ['nools']);
     var illiconstat = angular.module('illiconstat');
 
     var reportServiceFactory = function pvServiceProvider(nools) {
