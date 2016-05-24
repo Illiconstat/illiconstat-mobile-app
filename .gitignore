@@ -5,6 +5,12 @@
 node_modules/
 platforms/
 plugins/
+npm-debug.log
+
+# Generated
+www/styles
+www/assets/js/[app,vendor]*.js
+www/assets/css/*.css
 
 # Intellij Idea
 .idea

@@ -26,5 +26,6 @@ angular.module('app.controllers', [])
    
 .controller('afficherConstatCtrl', function($scope) {
 
-})
+});
+
  

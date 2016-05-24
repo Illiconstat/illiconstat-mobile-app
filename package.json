@@ -3,33 +3,51 @@
   "version": "1.1.1",
   "description": "illiconstat-mobile-app: An Ionic project",
   "repository": {
-  "type": "git",
-  "url": "git+https://github.com/Illiconstat/illiconstat-mobile-app.git"
-},
-"keywords": [
-"constat",
-"assurance",
-"accident"
-],
-"author": "segtio, ekougs",
-"license": "ISC",
-"bugs": {
-"url": "https://github.com/Illiconstat/illiconstat/issues"
-},
-"homepage": "https://github.com/Illiconstat/illiconstat#readme",
-
+    "type": "git",
+    "url": "git+https://github.com/Illiconstat/illiconstat-mobile-app.git"
+  },
+  "keywords": [
+    "constat",
+    "assurance",
+    "accident"
+  ],
+  "author": "segtio, ekougs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Illiconstat/illiconstat/issues"
+  },
+  "homepage": "https://github.com/Illiconstat/illiconstat#readme",
+  "scripts": {
+    "concat": "node config/bin/concat",
+    "compile:sass": "node-sass --output www/assets/css scss/",
+    "concat:css": "npm run concat www/styles/**/*.css www/assets/css/styles.css",
+    "uglify:css": "uglify -c -s www/assets/css/styles.css -o www/assets/css/styles.min.css",
+    "build:css": "npm-run-all compile:sass concat:css uglify:css",
+    "concat:js": "npm run concat www/app/**/*.js www/assets/js/app.js",
+    "uglify:js": "uglifyjs --compress --mangle --output ./www/assets/js/app.min.js -- www/assets/js/app.js",
+    "build:app": "npm-run-all concat:js uglify:js",
+    "build": "npm-run-all -p build:app build:css"
+  },
   "dependencies": {
-    "gulp": "^3.5.6",
-    "gulp-sass": "^2.0.4",
-    "gulp-concat": "^2.2.0",
-    "gulp-minify-css": "^0.3.0",
-    "gulp-rename": "^1.2.0",
-    "nools": "^0.4.1"
+    "angular": "1.5.3",
+    "angular-animate": "1.5.3",
+    "angular-sanitize": "1.5.3",
+    "node-waves": "0.6.6",
+    "nools": "0.4.1"
   },
   "devDependencies": {
-    "bower": "^1.3.3",
-    "gulp-util": "^2.2.14",
-    "shelljs": "^0.3.0"
+    "bower": "1.3.3",
+    "fs": "0.0.2",
+    "glob": "7.0.3",
+    "gulp-util": "2.2.14",
+    "ionic": "1.3.1",
+    "mkdirp": "0.5.1",
+    "node-sass": "3.7.0",
+    "npm-run-all": "2.1.1",
+    "path": "0.12.7",
+    "shelljs": "0.3.0",
+    "uglify": "0.1.5",
+    "uglify-js": "2.6.2"
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
