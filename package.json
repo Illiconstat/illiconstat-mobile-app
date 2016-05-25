@@ -1,7 +1,7 @@
 {
   "name": "illiconstat-mobile-app",
-  "version": "1.1.1",
-  "description": "illiconstat-mobile-app: An Ionic project",
+  "version": "0.0.1",
+  "description": "Notre application mobile de constat rapide",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Illiconstat/illiconstat-mobile-app.git"
@@ -14,7 +14,7 @@
   "author": "segtio, ekougs",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Illiconstat/illiconstat/issues"
+    "url": "https://github.com/Illiconstat/illiconstat-mobile-app/issues"
   },
   "homepage": "https://github.com/Illiconstat/illiconstat#readme",
   "scripts": {
@@ -25,26 +25,34 @@
     "build:css": "npm-run-all compile:sass concat:css uglify:css",
     "concat:js": "npm run concat www/app/**/*.js www/assets/js/app.js",
     "uglify:js": "uglifyjs --compress --mangle --output ./www/assets/js/app.min.js -- www/assets/js/app.js",
-    "build:app": "npm-run-all concat:js uglify:js",
-    "build": "npm-run-all -p build:app build:css"
+    "build:browserify": "browserify -r nools > www/vendor/browserify-bundle.js",
+    "build:app": "npm-run-all build:browserify concat:js uglify:js",
+    "build": "npm-run-all -p build:app build:css",
+    "test": "karma start config/karma.conf.js"
   },
   "dependencies": {
     "angular": "1.5.3",
     "angular-animate": "1.5.3",
     "angular-sanitize": "1.5.3",
     "node-waves": "0.6.6",
-    "nools": "0.4.1"
+    "nools": "^0.4.1"
   },
   "devDependencies": {
-    "bower": "1.3.3",
+    "angular-mocks": "1.5.3",
+    "browserify": "13.0.1",
     "fs": "0.0.2",
     "glob": "7.0.3",
-    "gulp-util": "2.2.14",
     "ionic": "1.3.1",
+    "jasmine": "2.4.1",
+    "jasmine-core": "2.4.1",
+    "karma": "0.13.22",
+    "karma-jasmine": "1.0.2",
+    "karma-phantomjs-launcher": "1.0.0",
     "mkdirp": "0.5.1",
     "node-sass": "3.7.0",
     "npm-run-all": "2.1.1",
     "path": "0.12.7",
+    "phantomjs-prebuilt": "2.1.7",
     "shelljs": "0.3.0",
     "uglify": "0.1.5",
     "uglify-js": "2.6.2"
