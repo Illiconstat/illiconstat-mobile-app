@@ -38,6 +38,8 @@
     "nools": "^0.4.1"
   },
   "devDependencies": {
+    "cordova" : "5.1.1",
+    "ionic" : "1.7.13",
     "angular-mocks": "1.5.3",
     "browserify": "13.0.1",
     "fs": "0.0.2",
