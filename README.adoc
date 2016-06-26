@@ -1,0 +1,14 @@
+# App mobile Illiconstat
+
+## Initialiser son environnement
+`npm install` +
+`bower install`
+
+## Lancer le serveur ionic
+`gulp serve`
+
+## Lancer l'émulation
+`gulp emulate --platform $platform` où $platform = ios | android
+
+## Lancer les tests
+`gulp test`

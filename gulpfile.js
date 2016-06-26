@@ -11,6 +11,9 @@ var sh = require('shelljs');
 var Server = require('karma').Server;
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var argv = require('yargs').argv;
+
+var cordovaPlatforms = require('./package.json').cordovaPlatforms;
 
 var paths = {
     sass: ['./scss/**/*.scss']
@@ -69,4 +72,26 @@ gulp.task('test', function (done) {
         configFile: __dirname + '/config/karma.conf.js',
         singleRun: true
     }, done).start();
+});
+
+gulp.task('serve', function () {
+    sh.exec('ionic serve');
+});
+
+gulp.task('install:platforms', function () {
+    cordovaPlatforms.forEach(function (platform) {
+        gutil.log('Installing platform ' + platform + '...');
+        var exec = sh.exec('cordova platform add ' + platform, {silent:true});
+        if (exec !== 0) {
+            gutil.log('Platform ' + platform + ' has already been added.');
+        }
+    });
+});
+
+gulp.task('emulate', ['install:platforms'], function () {
+    var platform = argv.platform;
+    if (!platform) {
+        throw new Error('Platform should be provided when trying to emulate. Have a look at the README.');
+    }
+    sh.exec('ionic emulate ' + platform);
 });

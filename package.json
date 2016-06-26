@@ -38,7 +38,8 @@
     "phantomjs-prebuilt": "2.1.7",
     "shelljs": "0.3.0",
     "vinyl-buffer": "1.0.0",
-    "vinyl-source-stream": "1.1.0"
+    "vinyl-source-stream": "1.1.0",
+    "yargs": "4.7.1"
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
@@ -46,5 +47,8 @@
     "cordova-plugin-whitelist",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    "ios",
+    "android"
+  ]
 }
