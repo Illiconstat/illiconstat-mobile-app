@@ -18,17 +18,27 @@
   },
   "homepage": "https://github.com/Illiconstat/illiconstat#readme",
   "dependencies": {
-    "nools": "^0.4.1"
+    "nools": "0.4.1"
   },
   "devDependencies": {
-    "bower": "^1.3.3",
-    "gulp": "^3.5.6",
-    "gulp-concat": "^2.2.0",
-    "gulp-minify-css": "^0.3.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^2.0.4",
-    "gulp-util": "^2.2.14",
-    "shelljs": "^0.3.0"
+    "bower": "1.3.3",
+    "browserify": "13.0.1",
+    "gulp": "3.5.6",
+    "gulp-concat": "2.2.0",
+    "gulp-minify-css": "0.3.0",
+    "gulp-rename": "1.2.0",
+    "gulp-sass": "2.0.4",
+    "gulp-uglify": "1.5.4",
+    "gulp-util": "2.2.14",
+    "jasmine": "2.4.1",
+    "jasmine-core": "2.4.1",
+    "karma": "0.13.22",
+    "karma-jasmine": "1.0.2",
+    "karma-phantomjs-launcher": "1.0.0",
+    "phantomjs-prebuilt": "2.1.7",
+    "shelljs": "0.3.0",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0"
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
