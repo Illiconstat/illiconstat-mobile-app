@@ -14,3 +14,6 @@ npm-debug.log
 
 # Bower
 www/lib
+
+# Generated
+www/css

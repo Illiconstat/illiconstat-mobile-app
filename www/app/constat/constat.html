@@ -1,0 +1,29 @@
+<ion-view title="Constat" id="Constat">
+    <ion-content padding="true" class="has-header">
+        <div class="button-bar">
+            <button id="constat-identite-button" class="button button-round"
+                    ng-class="{'button-positive': vm.stepEquals(1)}"
+                    ng-click="vm.setStep(1)"
+                    ui-sref="constat.identite">
+                1
+            </button>
+            <button id="constat-pv-button" class="button button-round"
+                    ng-class="{'button-positive': vm.stepEquals(2)}"
+                    ng-click="vm.setStep(2)">
+                2
+            </button>
+            <button id="constat-recap-button" class="button button-round"
+                    ng-class="{'button-positive': vm.stepEquals(3)}"
+                    ng-click="vm.setStep(3)">
+                3
+            </button>
+            <button id="constat-envoi-button" class="button button-round"
+                    ng-class="{'button-positive': vm.stepEquals(4)}"
+                    ng-click="vm.setStep(4)">
+                4
+            </button>
+        </div>
+        <div ui-view>
+        </div>
+    </ion-content>
+</ion-view>

@@ -22,7 +22,7 @@ var paths = {
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function (done) {
-    gulp.src('./scss/ionic.app.scss')
+    gulp.src('./scss/*.scss')
         .pipe(sass())
         .on('error', sass.logError)
         .pipe(gulp.dest('./www/css/'))
@@ -67,14 +67,14 @@ gulp.task('git-check', function (done) {
     done();
 });
 
-gulp.task('test', function (done) {
+gulp.task('test', ['browserify'], function (done) {
     new Server({
         configFile: __dirname + '/config/karma.conf.js',
         singleRun: true
     }, done).start();
 });
 
-gulp.task('serve', function () {
+gulp.task('serve', ['browserify', 'sass'], function () {
     sh.exec('ionic serve');
 });
 
@@ -88,7 +88,7 @@ gulp.task('install:platforms', function () {
     });
 });
 
-gulp.task('emulate', ['install:platforms'], function () {
+gulp.task('emulate', ['install:platforms', 'browserify', 'sass'], function () {
     var platform = argv.platform;
     if (!platform) {
         throw new Error('Platform should be provided when trying to emulate. Have a look at the README.');
