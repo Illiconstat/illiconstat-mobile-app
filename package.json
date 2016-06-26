@@ -1,33 +1,32 @@
 {
   "name": "illiconstat-mobile-app",
   "version": "1.1.1",
-  "description": "illiconstat-mobile-app: An Ionic project",
+  "description": "Notre application mobile pour simplifier les constats",
   "repository": {
-  "type": "git",
-  "url": "git+https://github.com/Illiconstat/illiconstat-mobile-app.git"
-},
-"keywords": [
-"constat",
-"assurance",
-"accident"
-],
-"author": "segtio, ekougs",
-"license": "ISC",
-"bugs": {
-"url": "https://github.com/Illiconstat/illiconstat/issues"
-},
-"homepage": "https://github.com/Illiconstat/illiconstat#readme",
-
+    "type": "git",
+    "url": "git+https://github.com/Illiconstat/illiconstat-mobile-app.git"
+  },
+  "keywords": [
+    "constat",
+    "assurance",
+    "accident"
+  ],
+  "author": "segtio, ekougs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Illiconstat/illiconstat/issues"
+  },
+  "homepage": "https://github.com/Illiconstat/illiconstat#readme",
   "dependencies": {
-    "gulp": "^3.5.6",
-    "gulp-sass": "^2.0.4",
-    "gulp-concat": "^2.2.0",
-    "gulp-minify-css": "^0.3.0",
-    "gulp-rename": "^1.2.0",
     "nools": "^0.4.1"
   },
   "devDependencies": {
     "bower": "^1.3.3",
+    "gulp": "^3.5.6",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4",
     "gulp-util": "^2.2.14",
     "shelljs": "^0.3.0"
   },

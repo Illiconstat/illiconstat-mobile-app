@@ -9,3 +9,6 @@ plugins/
 # Intellij Idea
 .idea
 .iml
+
+# Bower
+www/lib
