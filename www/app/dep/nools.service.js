@@ -1,5 +1,3 @@
-'use strict';
-
 (function() {
     angular.module('nools', []);
     var nools = angular.module('nools');

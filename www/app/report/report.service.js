@@ -1,8 +1,5 @@
-'use strict';
-
 (function () {
-    angular.module('illiconstat', ['nools']);
-    var illiconstat = angular.module('illiconstat');
+    var report = angular.module('report');
 
     function StatementGroup() {
         this.statements = Array.prototype.slice.call(arguments);
@@ -152,5 +149,5 @@
 
     reportServiceFactory.$inject = ['nools'];
 
-    illiconstat.factory('reportService', reportServiceFactory);
+    report.factory('reportService', reportServiceFactory);
 })();

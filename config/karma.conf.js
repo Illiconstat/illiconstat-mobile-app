@@ -1,6 +1,4 @@
 module.exports = function (config) {
-    var dependencies = require('../package.json').dependencies;
-    var excludedDependencies = [];
     var configuration = {
         basePath: '..',
 
@@ -9,12 +7,14 @@ module.exports = function (config) {
         reporters: ['progress'],
 
         files: [
-            'node_modules/angular/angular.js',
-            'node_modules/angular-mocks/angular-mocks.js',
-            'node_modules/nools/nools.js',
+            'www/lib/angular/angular.js',
+            'www/lib/angular-ui-router/release/angular-ui-router.js',
+            'www/lib/nools/nools.js',
+            'www/lib/browserify-bundle.js',
+            'www/lib/angular-mocks/angular-mocks.js',
+            'www/app/**/*.module.js',
+            'www/app/**/!(*.module)+(.js)',
             // 'config/karma-test-shim.js',
-            'www/app/**/*.js',
-            'www/vendor/browserify-bundle.js',
             'test/**/*.js'
         ],
 
@@ -23,8 +23,7 @@ module.exports = function (config) {
             // required for component assests fetched by Angular's compiler
             "/config/": "/base/config/",
             "/www/": "/base/www/",
-            "/test/": "/base/test/",
-            "/node_modules/": "/base/node_modules/"
+            "/test/": "/base/test/"
         },
 
         exclude: [
@@ -37,18 +36,6 @@ module.exports = function (config) {
         autoWatch: false,
         singleRun: true
     };
-
-    Object.keys(dependencies).forEach(function (key) {
-        if (excludedDependencies.indexOf(key) >= 0) {
-            return;
-        }
-
-        configuration.files.push({
-                                     pattern: 'node_modules/' + key + '/**/*.js',
-                                     included: false,
-                                     watched: false
-                                 });
-    });
 
     if (process.env.APPVEYOR) {
         configuration.browsers = ['IE'];

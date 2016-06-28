@@ -2,7 +2,7 @@
 
 (function () {
     var subject;
-    beforeEach(module('illiconstat'));
+    beforeEach(module('report'));
     beforeEach(inject(function (reportService, nools) {
         subject = reportService;
         nools.deleteFlows();
